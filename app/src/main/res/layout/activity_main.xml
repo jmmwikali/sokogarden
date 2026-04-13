@@ -1,58 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:orientation="vertical"
-    android:background="#FFE6C8"
+    android:background="#F4F0E8"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="❇ SokoGarden ️❇"
-        android:letterSpacing="0.06"
-        android:textSize="35sp"
-        android:textStyle="bold|italic"
-        android:background="@drawable/shape"
-        android:padding="12sp"
-        android:textColor="#fff"
-        android:textAlignment="center"/>
-
-<!--    Below is a linear layout that align content horizontally-->
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+        android:background="#1C2B1A"
+        android:orientation="vertical"
+        android:paddingTop="48dp"
+        android:paddingBottom="28dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SokoGarden"
+            android:textSize="36sp"
+            android:textStyle="bold|italic"
+            android:textColor="#E8D5A3"
+            android:letterSpacing="0.02"
+            android:fontFamily="serif"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EVERYTHING YOU NEED"
+            android:textSize="12sp"
+            android:letterSpacing="0.2"
+            android:textColor="#7A9B72"
+            android:layout_marginTop="4dp"/>
+
+    </LinearLayout>
+
+    <!-- Welcome card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#2E4A2C"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="24dp"
+        android:padding="22dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WELCOME"
+            android:textSize="12sp"
+            android:letterSpacing="0.2"
+            android:textColor="#7A9B72"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your ultimate\nshopping destination!"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            android:textColor="#E8D5A3"
+            android:fontFamily="serif"
+            android:layout_marginTop="7dp"
+            android:lineSpacingMultiplier="1.2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Whether you are looking for the latest tech, a wardrobe refresh, or everyday household essentials, SokoGarden will be your one-stop shop."
+            android:textSize="15sp"
+            android:textColor="#A8C4A2"
+            android:layout_marginTop="15dp"
+            android:lineSpacingMultiplier="1.5"/>
+
+    </LinearLayout>
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:weightSum="2">
 
         <Button
+            android:id="@+id/signupbtn"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="📝 SignUp"
-            android:textSize="25sp"
-            android:padding="10dp"
-            android:layout_marginStart="10dp"
-            android:backgroundTint="#0B1F3B"
-            android:textColor="#AFB3C3"
-            android:id="@+id/signupbtn"/>
+            android:layout_height="52dp"
+            android:text="Sign Up"
+            android:textSize="18sp"
+            android:textColor="#E8D5A3"
+            android:backgroundTint="#2E4A2C"
+            android:layout_marginEnd="8dp"
+            android:stateListAnimator="@null"/>
 
         <Button
+            android:id="@+id/signinbtn"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="👤 SignIn"
-            android:textSize="25sp"
-            android:padding="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="10dp"
-            android:backgroundTint="#0B1F3B"
-            android:textColor="#AFB3C3"
-            android:id="@+id/signinbtn"/>
+            android:layout_height="52dp"
+            android:text="Sign In"
+            android:textSize="18sp"
+            android:textColor="#2E4A2C"
+            android:backgroundTint="#E8D5A3"
+            android:layout_marginStart="8dp"
+            android:stateListAnimator="@null"/>
 
     </LinearLayout>
 
