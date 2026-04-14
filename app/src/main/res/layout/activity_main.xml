@@ -58,6 +58,7 @@
             android:layout_height="wrap_content"
             android:text="WELCOME"
             android:textSize="12sp"
+            android:id="@+id/usernameTextView"
             android:letterSpacing="0.2"
             android:textColor="#7A9B72"/>
 
@@ -102,8 +103,7 @@
             android:textSize="18sp"
             android:textColor="#E8D5A3"
             android:backgroundTint="#2E4A2C"
-            android:layout_marginEnd="8dp"
-            android:stateListAnimator="@null"/>
+            android:layout_marginEnd="8dp"/>
 
         <Button
             android:id="@+id/signinbtn"
@@ -114,9 +114,21 @@
             android:textSize="18sp"
             android:textColor="#2E4A2C"
             android:backgroundTint="#E8D5A3"
-            android:layout_marginStart="8dp"
-            android:stateListAnimator="@null"/>
+            android:layout_marginStart="8dp"/>
 
     </LinearLayout>
+
+<!--    Logout Button-->
+<!--    <Button-->
+<!--        android:id="@+id/logoutbutton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Log Out"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textColor="#2E4A2C"-->
+<!--        android:backgroundTint="#E8D5A3"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:stateListAnimator="@null"/>-->
 
 </LinearLayout>

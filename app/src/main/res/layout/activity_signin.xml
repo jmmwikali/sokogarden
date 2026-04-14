@@ -76,7 +76,7 @@
                 android:textColorHint="#A89E86"
                 android:textColor="#1C2B1A"
                 android:textSize="17sp"
-                android:background="#F4F0E8"
+                android:background="@drawable/shape"
                 android:paddingStart="14dp"
                 android:paddingEnd="14dp"
                 android:inputType="textEmailAddress"
@@ -91,7 +91,7 @@
                 android:textColorHint="#A89E86"
                 android:textColor="#1C2B1A"
                 android:textSize="17sp"
-                android:background="#F4F0E8"
+                android:background="@drawable/shape"
                 android:paddingStart="14dp"
                 android:paddingEnd="14dp"
                 android:inputType="textPassword"
@@ -114,7 +114,6 @@
                 android:textSize="18sp"
                 android:textColor="#FFFFFF"
                 android:backgroundTint="#C47B2A"
-                android:stateListAnimator="@null"
                 android:layout_marginBottom="16dp"/>
 
             <!-- Sign Up link -->
