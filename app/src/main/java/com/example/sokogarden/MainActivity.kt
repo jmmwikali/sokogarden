@@ -3,8 +3,10 @@ package com.example.sokogarden
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -40,27 +42,41 @@ class MainActivity : AppCompatActivity() {
 //        HOW TO RETRIEVE DATA FROM APP STORAGE
 //        Find the textview by id
         val usernameText = findViewById<TextView>(R.id.usernameTextView)
+        //        LOGOUT BUTTON - CLEARS DATA IN APP STORAGE
+        val logoutbutton = findViewById<Button>(R.id.logoutbutton)
 
 //        First access the file where the data is stored
         val prefs = getSharedPreferences("user_session",Context.MODE_PRIVATE)
 
 //        Get the data by use of the key
-        val username = prefs.getString("username", "Guest")
+        val username = prefs.getString("username", null)
 
+
+        if (username != null) {
+            Signupbutton.visibility = View.GONE
+            Signinbutton.visibility = View.GONE
+            logoutbutton.visibility = View.VISIBLE
 //        Update UI
-        usernameText.text = "Welcome $username"
+            usernameText.text = "Welcome $username"
+        }
+        else {
+            Signupbutton.visibility = View.VISIBLE
+            Signinbutton.visibility = View.VISIBLE
+            logoutbutton.visibility = View.GONE
+        }
 
-//        LOGOUT BUTTON - CLEARS DATA IN APP STORAGE
-//        val logoutbutton = findViewById<Button>(R.id.logoutbutton)
 //        Setting on click listener
-//        logoutbutton.setOnClickListener {
+        logoutbutton.setOnClickListener {
 //        Accessing the file that the data was stored in
-//            val prefs = getSharedPreferences("user_session",Context.MODE_PRIVATE)
+            val prefs = getSharedPreferences("user_session",Context.MODE_PRIVATE)
 //        Editing the file, clearing the data, saving the changes
-//            prefs.edit().clear().apply()
-//        Updating the text view
-//            usernameText.text = "WELCOME"
-//        }
+            prefs.edit().clear().apply()
+            Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
+
+//        Refresh activity
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
 
 
     }

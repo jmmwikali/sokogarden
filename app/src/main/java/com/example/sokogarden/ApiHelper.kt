@@ -28,7 +28,16 @@ class ApiHelper(var context: Context) {
                 headers: Array<out Header>?,
                 response: JSONObject?
             ) {
-                Toast.makeText(context, "Response: $response", Toast.LENGTH_SHORT).show()
+                val message = response?.optString("message")
+                Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+                if (message == "User registered successfully") {
+                    // Redirect to Dashboard
+                    val intent = Intent(context, MainActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                    context.startActivity(intent)
+                } else {
+                Toast.makeText(context, "$message", Toast.LENGTH_LONG).show()
+            }
             }
 
             override fun onFailure(
