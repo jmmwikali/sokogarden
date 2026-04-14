@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SokoGarden"
+            android:text="🛒 SokoGarden"
             android:textSize="36sp"
             android:textStyle="bold|italic"
             android:textColor="#E8D5A3"
@@ -42,7 +42,7 @@
 
     </LinearLayout>
 
-    <!-- Welcome card -->
+    <!-- Welcome banner -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="52dp"
-            android:text="Sign Up"
+            android:text="➕ Sign Up"
             android:textSize="18sp"
             android:textColor="#E8D5A3"
             android:backgroundTint="#2E4A2C"
@@ -110,7 +110,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="52dp"
-            android:text="Sign In"
+            android:text="👤 Sign In"
             android:textSize="18sp"
             android:textColor="#2E4A2C"
             android:backgroundTint="#E8D5A3"
