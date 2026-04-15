@@ -5,12 +5,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,6 +80,18 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
+//        Find the recycler view and the progress bar by use of their ids
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        val progressBar = findViewById<ProgressBar>(R.id.progressbar)
+
+//        Specify the api url endpoint for fetching the products
+        val url = "https://jmmwikali.alwaysdata.net/api/get_products"
+
+//        Import the helper class
+        val helper = ApiHelper(applicationContext)
+
+//        Inside the helper class, access the function loadProducts
+        helper.loadProducts(url, recyclerView, progressBar)
 
     }
 }

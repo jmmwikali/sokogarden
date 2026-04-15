@@ -31,6 +31,18 @@ class ApiHelper(var context: Context) {
                 val message = response?.optString("message")
                 Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
                 if (message == "User registered successfully") {
+                    val user = response.optJSONObject("user")
+                    val username = user?.optString("username") ?: ""
+                    val email = user?.optString("email") ?: ""
+
+                    // 🔐 Save to SharedPreferences
+                    val prefs = context.getSharedPreferences("user_session", Context.MODE_PRIVATE)
+                    val editor = prefs.edit()
+                    editor.putString("username", username)
+                    editor.putString("email", email)
+                    editor.apply()
+
+                    Toast.makeText(context, "Welcome $username", Toast.LENGTH_LONG).show()
                     // Redirect to Dashboard
                     val intent = Intent(context, MainActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
@@ -43,10 +55,11 @@ class ApiHelper(var context: Context) {
             override fun onFailure(
                 statusCode: Int,
                 headers: Array<out Header>?,
-                responseString: String?,
-                throwable: Throwable?
+                throwable: Throwable?,
+                response: JSONObject?
             ) {
-                Toast.makeText(context, "Error: $responseString", Toast.LENGTH_LONG).show()
+                val message = response?.optString("message") ?: "Something went wrong ($statusCode)"
+                Toast.makeText(context, message, Toast.LENGTH_LONG).show()
             }
         })
     }
@@ -110,9 +123,9 @@ fun loadProducts(url: String, recyclerView: RecyclerView, progressBar: ProgressB
             response: JSONArray
         ) {
             progressBar?.visibility = View.GONE
-            // val productList = ProductAdapter.fromJsonArray(response)
-            // val adapter = ProductAdapter(productList)
-            // recyclerView.adapter = adapter
+             val productList = ProductAdapter.fromJsonArray(response)
+             val adapter = ProductAdapter(productList)
+             recyclerView.adapter = adapter
         }
 
         override fun onFailure(

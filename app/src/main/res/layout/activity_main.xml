@@ -129,8 +129,19 @@
         android:visibility="gone"
         android:backgroundTint="#E8D5A3"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="8dp" />
 
-        android:stateListAnimator="@null"/>
+<!--    Below is our progress bar-->
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressbar"/>
+
+<!--    Below is our recycler view-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerView"
+        tools:listitem="@layout/single_item"/>
 
 </LinearLayout>

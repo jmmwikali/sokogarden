@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="16dp"
         android:layout_margin="20dp"
-        app:cardElevation="0dp"
+        app:cardElevation="6dp"
         app:cardBackgroundColor="#FFFFFF">
 
         <LinearLayout
@@ -134,7 +134,7 @@
                 android:id="@+id/signupbtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sign In"
+                android:text="Sign Up"
                 android:padding="12dp"
                 android:textSize="20sp"
                 android:textColor="#FFFFFF"
