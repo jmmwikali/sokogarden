@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
@@ -46,6 +47,9 @@ class MainActivity : AppCompatActivity() {
         val usernameText = findViewById<TextView>(R.id.usernameTextView)
         //        LOGOUT BUTTON - CLEARS DATA IN APP STORAGE
         val logoutbutton = findViewById<Button>(R.id.logoutbutton)
+        val welcomeBanner = findViewById<LinearLayout>(R.id.welcomebanner)
+        val headerBeforeLogin = findViewById<LinearLayout>(R.id.header1)
+        val headerAfterLogin = findViewById<LinearLayout>(R.id.header2)
 
 //        First access the file where the data is stored
         val prefs = getSharedPreferences("user_session",Context.MODE_PRIVATE)
@@ -57,14 +61,16 @@ class MainActivity : AppCompatActivity() {
         if (username != null) {
             Signupbutton.visibility = View.GONE
             Signinbutton.visibility = View.GONE
-            logoutbutton.visibility = View.VISIBLE
+            welcomeBanner.visibility = View.GONE
+            headerBeforeLogin.visibility = View.GONE
+            headerAfterLogin.visibility = View.VISIBLE
 //        Update UI
             usernameText.text = "Welcome $username"
         }
         else {
             Signupbutton.visibility = View.VISIBLE
             Signinbutton.visibility = View.VISIBLE
-            logoutbutton.visibility = View.GONE
+
         }
 
 //        Setting on click listener

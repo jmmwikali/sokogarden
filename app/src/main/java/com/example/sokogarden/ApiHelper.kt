@@ -45,7 +45,7 @@ class ApiHelper(var context: Context) {
                     Toast.makeText(context, "Welcome $username", Toast.LENGTH_LONG).show()
                     // Redirect to Dashboard
                     val intent = Intent(context, MainActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     context.startActivity(intent)
                 } else {
                 Toast.makeText(context, "$message", Toast.LENGTH_LONG).show()
@@ -92,7 +92,7 @@ class ApiHelper(var context: Context) {
 
                     // Redirect to Dashboard
                     val intent = Intent(context, MainActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     context.startActivity(intent)
                 } else {
                     Toast.makeText(context, "$message", Toast.LENGTH_LONG).show()
