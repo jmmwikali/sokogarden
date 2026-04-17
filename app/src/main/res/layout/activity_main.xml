@@ -144,32 +144,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
         android:weightSum="2">
 
         <Button
             android:id="@+id/signupbtn"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_weight="1"
-            android:layout_height="52dp"
+            android:layout_height="wrap_content"
             android:text="➕ Sign Up"
             android:textSize="18sp"
             android:textColor="#E8D5A3"
             android:backgroundTint="#2E4A2C"
-            android:layout_marginEnd="8dp"/>
+            android:layout_marginEnd="3dp"/>
 
         <Button
             android:id="@+id/signinbtn"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_weight="1"
-            android:layout_height="52dp"
+            android:layout_height="wrap_content"
             android:text="👤 Sign In"
             android:textSize="18sp"
             android:textColor="#2E4A2C"
             android:backgroundTint="#E8D5A3"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginEnd="3dp"/>
+
+        <Button
+            android:id="@+id/aboutbtn"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="📜 About"
+            android:textSize="18sp"
+            android:textColor="#2E4A2C"
+            android:backgroundTint="#E8D5A3"/>
+
 
     </LinearLayout>
 
