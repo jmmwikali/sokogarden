@@ -30,6 +30,32 @@ class ApiHelper(var context: Context) {
             ) {
                 val message = response?.optString("message")
                 Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onFailure(
+                statusCode: Int,
+                headers: Array<out Header>?,
+                responseString: String?,
+                throwable: Throwable?
+            ) {
+                Toast.makeText(context, "Error: $responseString", Toast.LENGTH_LONG).show()
+            }
+        })
+    }
+
+    //POSTSIGNUP
+    fun post_signup(api: String, params: RequestParams) {
+        Toast.makeText(context, "Please wait for response", Toast.LENGTH_LONG).show()
+        val client = AsyncHttpClient(true, 80, 443)
+
+        client.post(api, params, object : JsonHttpResponseHandler() {
+            override fun onSuccess(
+                statusCode: Int,
+                headers: Array<out Header>?,
+                response: JSONObject?
+            ) {
+                val message = response?.optString("message")
+                Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
                 if (message == "User registered successfully") {
                     val user = response.optJSONObject("user")
                     val username = user?.optString("username") ?: ""

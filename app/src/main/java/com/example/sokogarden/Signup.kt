@@ -54,7 +54,7 @@ class Signup : AppCompatActivity() {
             val helper = ApiHelper(applicationContext)
 
 //           Inside the helper class, access the function; post
-            helper.post(api, data)
+            helper.post_signup(api, data)
 
         }
     }
