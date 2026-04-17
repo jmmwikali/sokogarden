@@ -41,7 +41,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="16dp"
-        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
         app:cardElevation="6dp"
         app:cardBackgroundColor="#FFFFFF">
 
@@ -87,29 +89,31 @@
                 android:id="@+id/txtProductCost"
                 android:text="Ksh 1000"
                 android:textColor="#1C2B1A"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="5sp"
                 android:textStyle="bold"
                 android:textSize="25dp"
                 android:background="@drawable/shape"
                 android:padding="10dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter Your Phone Number"
-                android:textSize="18sp"
+                android:id="@+id/txtDescription"
+                android:text="The description of the product goes here"
                 android:textColor="#7A9B72"
-                android:layout_marginTop="14dp"/>
+                android:textSize="18dp"
+                android:layout_marginTop="3dp"
+                android:textStyle="italic"/>
 
 <!--            EditText for entering mobile number-->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/phone"
-                android:hint="25479730..."
+                android:hint="Enter Phone Number e.g 25479730..."
                 android:textColorHint="#A89E86"
                 android:background="@drawable/shape"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="5dp"
                 android:padding="14dp"
                 android:inputType="number"
                 android:textColor="#1C2B1A"

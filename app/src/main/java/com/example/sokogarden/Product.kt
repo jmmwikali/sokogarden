@@ -1,11 +1,13 @@
 package com.example.sokogarden
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import org.json.JSONArray
@@ -53,14 +55,22 @@ class ProductAdapter(private val productList: List<Product>) :
                 //Handle Purchase Button Listener
                 holder.btnPurchase.setOnClickListener {
                     val context = holder.itemView.context
-                    val intent = android.content.Intent(context, PaymentActivity::class.java).apply {
-                        putExtra("product_id", product.product_id)
-                        putExtra("product_name", product.product_name)
-                        putExtra("product_description", product.product_description)
-                        putExtra("product_cost", product.product_cost)
-                        putExtra("product_photo", product.product_photo)
+                    val prefs = context.getSharedPreferences("user_session", Context.MODE_PRIVATE)
+                    val username = prefs.getString("username", null)
+
+                    if (username != null) {
+                        val intent =
+                            android.content.Intent(context, PaymentActivity::class.java).apply {
+                                putExtra("product_id", product.product_id)
+                                putExtra("product_name", product.product_name)
+                                putExtra("product_description", product.product_description)
+                                putExtra("product_cost", product.product_cost)
+                                putExtra("product_photo", product.product_photo)
+                            }
+                        context.startActivity(intent)
+                    } else {
+                        Toast.makeText(context, "Please sign in first", Toast.LENGTH_SHORT).show()
                     }
-                    context.startActivity(intent)
                 }
     }
  
