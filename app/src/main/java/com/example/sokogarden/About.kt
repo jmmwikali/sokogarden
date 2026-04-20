@@ -32,6 +32,14 @@ class About : AppCompatActivity() {
         tts = TextToSpeech(this) {
             if (it == TextToSpeech.SUCCESS) {
                 tts.language = Locale.UK
+
+                val voices = tts.voices
+                for (voice in voices) {
+                    if (voice.name.contains("male", ignoreCase = true)) {
+                        tts.voice = voice
+                        break
+                    }
+                }
             }
         }// End
 
